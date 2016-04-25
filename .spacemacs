@@ -253,7 +253,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq clojure-enable-fancify-symbols t)
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-  (setq Tex-PDF-mode t))
+  (setq Tex-PDF-mode t)
+  (setq-default mac-right-option-modifier nil))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
