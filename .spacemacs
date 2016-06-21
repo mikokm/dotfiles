@@ -26,13 +26,11 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
-     git
      markdown
      org
-     syntax-checking
      clojure
      c-c++
-     latex)
+     irony-mode)
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -146,7 +144,7 @@ values."
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
-   dotspacemacs-auto-save-file-location 'cache
+   dotspacemacs-auto-save-file-location 'nil
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
    ;; If non nil then `ido' replaces `helm' for some commands. For now only
@@ -178,7 +176,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -249,7 +247,9 @@ you should place your code here."
   (setq clojure-enable-fancify-symbols t)
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
   (setq Tex-PDF-mode t)
-  (setq-default mac-right-option-modifier nil))
+  (setq-default mac-right-option-modifier nil)
+  (setq projectile-enable-caching t)
+  (setq helm-projectile-fuzzy-match nil))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
