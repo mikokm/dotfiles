@@ -81,3 +81,14 @@ alias miko="ssh -p 2222 miko@miko.lol"
 alias irc="ssh -t -p 2222 miko@miko.lol tmux a"
 
 alias ll="ls -lh"
+
+alias subl="~/.subl"
+
+alias mb="./mach build binaries"
+alias mr="./mach run"
+
+bindkey -e
+bindkey '[C' forward-word
+bindkey '[D' backward-word
+
+source /usr/local/bin/mozconfigwrapper.sh
