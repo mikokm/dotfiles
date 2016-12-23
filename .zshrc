@@ -49,13 +49,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sbt brew lein)
+plugins=(brew)
 
 # User configuration
-
-export PATH="/usr/local/opt/ccache/libexec:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -68,9 +64,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='vim'
 fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -91,4 +84,12 @@ bindkey -e
 bindkey '[C' forward-word
 bindkey '[D' backward-word
 
+export MOZ_HOST_BIN="/Users/miko/.mozbuild/host-utils.37.0a2.en-US.mac"
+export ANDROID_SDK="/Users/miko/.mozbuild/android-sdk-macosx"
+
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/miko/.mozbuild/android-sdk-macosx/platform-tools:$PATH"
+# export MANPATH="/usr/local/man:$MANPATH"
+
 source /usr/local/bin/mozconfigwrapper.sh
+source /Users/miko/.cargo/env

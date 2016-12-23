@@ -1,0 +1,24 @@
+# Define where build files should go. This places them in the directory
+# "obj-ff-dbg" under the current source directory
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-release
+
+# -s makes builds quieter by default
+# -j4 allows 4 tasks to run in parallel. Set the number to be the amount of
+# cores in your machine. 4 is a good number.
+mk_add_options MOZ_MAKE_FLAGS="-s -j8"
+
+# Enable debug builds
+ac_add_options --disable-debug
+
+# Enable compiler optimizations
+ac_add_options --enable-optimize 
+
+# Enable ccache
+ac_add_options --with-ccache=/usr/local/bin/ccache
+
+# Enable clang color output
+CC="clang -fcolor-diagnostics"
+CXX="clang++ -fcolor-diagnostics"
+
+# Rebuild the source tree if needed
+mk_add_options AUTOCLOBBER=1
