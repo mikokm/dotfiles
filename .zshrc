@@ -85,11 +85,15 @@ bindkey '[C' forward-word
 bindkey '[D' backward-word
 
 export MOZ_HOST_BIN="/Users/miko/.mozbuild/host-utils.37.0a2.en-US.mac"
-export ANDROID_SDK="/Users/miko/.mozbuild/android-sdk-macosx"
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/Users/miko/.mozbuild/android-sdk-macosx/platform-tools:$PATH"
+export PATH="/usr/local/Cellar/python/2.7.13/bin:$PATH"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source /usr/local/bin/mozconfigwrapper.sh
 source /Users/miko/.cargo/env
+
+export WORKON_HOME="~/Envs"
+source /usr/local/bin/virtualenvwrapper.sh
