@@ -1,0 +1,21 @@
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-release-icc
+
+mk_add_options MOZ_MAKE_FLAGS="-s -j32"
+
+ac_add_options --enable-release
+ac_add_options --enable-profiling
+ac_add_options --enable-instruments
+
+#ac_add_options --with-ccache=/usr/local/bin/ccache
+
+mk_add_options AUTOCLOBBER=1
+
+
+mk_add_options "export ICECC_VERSION=x86_64:$HOME/clang/bad853a8a157374a346df1183b1111e4.tar.gz,Darwin17_x86_64:$HOME/clang/ce3126a6676d8b9cd58ea709615bee97.tar.gz"
+mk_add_options "export ICECC_CC=/usr/local/opt/llvm@4/bin/clang"
+mk_add_options "export ICECC_CXX=/usr/local/opt/llvm@4/bin/clang++"
+mk_add_options "export ICECC_CLANG_REMOTE_CPP=1"
+
+CC="/usr/local/Cellar/icecream/1.1/libexec/icecc/bin/clang --target=x86_64-apple-darwin16.0.0 -mmacosx-version-min=10.11"
+CXX="/usr/local/Cellar/icecream/1.1/libexec/icecc/bin/clang++ --target=x86_64-apple-darwin16.0.0 -mmacosx-version-min=10.11"
+

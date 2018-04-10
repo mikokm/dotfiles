@@ -68,7 +68,7 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export JAVA_HOME="$(/usr/libexec/java_home)"
 
 alias miko="ssh -p 2222 miko@miko.lol"
 alias irc="ssh -t -p 2222 miko@miko.lol tmux a"
@@ -86,14 +86,15 @@ bindkey '[D' backward-word
 
 export MOZ_HOST_BIN="/Users/miko/.mozbuild/host-utils.37.0a2.en-US.mac"
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/Users/miko/.mozbuild/android-sdk-macosx/platform-tools:$PATH"
-export PATH="/usr/local/Cellar/python/2.7.13/bin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source /usr/local/bin/mozconfigwrapper.sh
 source /Users/miko/.cargo/env
 
 export WORKON_HOME="~/Envs"
 source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/mozconfigwrapper.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

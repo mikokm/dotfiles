@@ -9,6 +9,9 @@ mk_add_options MOZ_MAKE_FLAGS="-s -j8"
 
 # Enable debug builds
 ac_add_options --enable-debug
+ac_add_options --enable-debug-symbols
+
+ac_add_options --enable-optimize
 
 # Enable ccache
 ac_add_options --with-ccache=/usr/local/bin/ccache
@@ -23,4 +26,4 @@ ac_add_options --target=i386-linux-android
 
 # With the following Android SDK and NDK:
 ac_add_options --with-android-sdk="/Users/miko/.mozbuild/android-sdk-macosx"
-ac_add_options --with-android-ndk="/Users/miko/.mozbuild/android-ndk-r11b"
+ac_add_options --with-android-ndk="/Users/miko/.mozbuild/android-ndk-r11c"
