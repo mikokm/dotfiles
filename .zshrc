@@ -68,7 +68,8 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-export JAVA_HOME="$(/usr/libexec/java_home)"
+#export JAVA_HOME="$(/usr/libexec/java_home)"
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 alias miko="ssh -p 2222 miko@miko.lol"
 alias irc="ssh -t -p 2222 miko@miko.lol tmux a"
@@ -88,6 +89,7 @@ export MOZ_HOST_BIN="/Users/miko/.mozbuild/host-utils.37.0a2.en-US.mac"
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/Users/miko/.mozbuild/android-sdk-macosx/platform-tools:$PATH"
+export PATH="/Users/miko/.mozbuild/arcanist/arcanist/bin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -98,3 +100,5 @@ source /usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/mozconfigwrapper.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias sigma="ssh -p2222 miko@sigma.local"

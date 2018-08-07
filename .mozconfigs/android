@@ -27,3 +27,5 @@ ac_add_options --target=i386-linux-android
 # With the following Android SDK and NDK:
 ac_add_options --with-android-sdk="/Users/miko/.mozbuild/android-sdk-macosx"
 ac_add_options --with-android-ndk="/Users/miko/.mozbuild/android-ndk-r11c"
+
+ac_add_options --enable-warnings-as-errors
