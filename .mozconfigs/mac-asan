@@ -3,13 +3,13 @@
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-asan
 
 # Adjust this to the number of CPU cores + 2
-mk_add_options MOZ_MAKE_FLAGS=-j10
+mk_add_options MOZ_MAKE_FLAGS=-j8
 
 # Enable ASan specific code and build workarounds
 ac_add_options --enable-address-sanitizer
 
 # Ensure you set this to your LLVM_HOME path
-export LLVM_HOME="/usr/local/opt/llvm@4"
+export LLVM_HOME="/usr/local/opt/llvm@6"
 
 # Set CC/CXX based on LLVM_HOME
 export CC="$LLVM_HOME/bin/clang"
@@ -48,4 +48,4 @@ ac_add_options --disable-install-strip
 ac_add_options --enable-debug
 
 # MacOSX only: Uncomment and adjust this path to match your SDK
-ac_add_options --with-macos-sdk=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk
+ac_add_options --with-macos-sdk=/Library/Developer/SDKs/MacOSX10.13.sdk

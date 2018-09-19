@@ -3,16 +3,19 @@ mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-release
 mk_add_options MOZ_MAKE_FLAGS="-s -j8"
 
 ac_add_options --enable-release
-#ac_add_options --enable-optimize
+ac_add_options --enable-optimize
 ac_add_options --enable-profiling
 ac_add_options --enable-instruments
 ac_add_options --disable-crashreporter
 
-ac_add_options --with-ccache=/usr/local/bin/ccache
+ac_add_options --with-ccache=ccache
 
-CC="clang -fcolor-diagnostics"
-CXX="clang++ -fcolor-diagnostics"
+export LLVM_HOME="/usr/local/opt/llvm@6"
+CC="$LLVM_HOME/bin/clang -fcolor-diagnostics"
+CXX="$LLVM_HOME/bin/clang++ -fcolor-diagnostics"
 
 mk_add_options AUTOCLOBBER=1
+mk_add_options "export RUSTC_WRAPPER=sccache" 
+mk_add_options "export CARGO_INCREMENTAL=1"
 
-# ac_add_options --enable-warnings-as-errors
+ac_add_options --with-macos-sdk=/Library/Developer/SDKs/MacOSX10.13.sdk

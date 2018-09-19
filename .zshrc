@@ -102,3 +102,4 @@ source /usr/local/bin/mozconfigwrapper.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias sigma="ssh -p2222 miko@sigma.local"
+alias lldb="PATH=/usr/bin /usr/bin/lldb"
