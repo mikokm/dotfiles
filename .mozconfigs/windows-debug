@@ -1,6 +1,6 @@
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-dbg
 
-mk_add_options MOZ_MAKE_FLAGS="-s -j8"
+mk_add_options MOZ_MAKE_FLAGS="-s -j4"
 
 ac_add_options --enable-debug
 ac_add_options --disable-optimize
