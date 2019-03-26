@@ -1,14 +1,12 @@
-# Define where build files should go. This places them in the directory
-# "obj-ff-dbg" under the current source directory
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-android-debug
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-android
 
 # -s makes builds quieter by default
 # -j4 allows 4 tasks to run in parallel. Set the number to be the amount of
 # cores in your machine. 4 is a good number.
-mk_add_options MOZ_MAKE_FLAGS="-s -j8"
+mk_add_options MOZ_MAKE_FLAGS="-s -j12"
 
 # Enable debug builds
-ac_add_options --enable-debug
+#ac_add_options --enable-debug
 ac_add_options --enable-debug-symbols
 
 ac_add_options --enable-optimize
@@ -19,13 +17,26 @@ ac_add_options --with-ccache=/usr/local/bin/ccache
 # Rebuild the source tree if needed
 mk_add_options AUTOCLOBBER=1
 
-# Build Firefox for Android:
+# Build GeckoView/Firefox for Android:
 ac_add_options --enable-application=mobile/android
-ac_add_options --target=i386-linux-android
+
+# Targeting the following architecture.  Ensure exactly one --target is uncommented!
+# For regular phones:
 # ac_add_options --target=arm-linux-androideabi
+# For x86 emulators (and x86 devices, which are uncommon):
+# ac_add_options --target=i686-linux-android
+# For newer phones.
+# ac_add_options --target=aarch64-linux-android
+# For x86_64 emulators (and x86_64 devices, which are even less common):
+ac_add_options --target=x86_64-linux-android
+
+# With the following java:
+ac_add_options --with-java-bin-path="/Library/Java/Home/bin"
 
 # With the following Android SDK and NDK:
 ac_add_options --with-android-sdk="/Users/miko/.mozbuild/android-sdk-macosx"
-ac_add_options --with-android-ndk="/Users/miko/.mozbuild/android-ndk-r11c"
+ac_add_options --with-android-ndk="/Users/miko/.mozbuild/android-ndk-r17b"
 
-ac_add_options --enable-warnings-as-errors
+# With the following compiler toolchain:
+CC="/Users/miko/.mozbuild/clang/bin/clang"
+CXX="/Users/miko/.mozbuild/clang/bin/clang++"

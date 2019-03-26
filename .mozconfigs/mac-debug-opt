@@ -1,11 +1,9 @@
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-release
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-dbg-opt
 
 mk_add_options MOZ_MAKE_FLAGS="-s -j12"
 
-ac_add_options --enable-release
-ac_add_options --enable-optimize
-ac_add_options --enable-debug-symbols
-
+ac_add_options --enable-debug
+ac_add_options --enable-optimize=-O1
 ac_add_options --enable-profiling
 ac_add_options --enable-instruments
 ac_add_options --disable-crashreporter
@@ -18,4 +16,6 @@ CC="$LLVM_HOME/bin/clang -fcolor-diagnostics"
 CXX="$LLVM_HOME/bin/clang++ -fcolor-diagnostics"
 
 mk_add_options AUTOCLOBBER=1
-mk_add_options "export RUSTC_WRAPPER=sccache"
+mk_add_options "export RUSTC_WRAPPER=sccache" 
+mk_add_options "export CARGO_INCREMENTAL=1"
+
