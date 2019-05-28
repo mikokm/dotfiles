@@ -1,0 +1,20 @@
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-dbg-gcc
+
+mk_add_options MOZ_MAKE_FLAGS="-s -j8"
+
+CC="gcc"
+CXX="g++"
+
+export MOZ_DEBUG_SYMBOLS=1
+
+ac_add_options --enable-debug
+ac_add_options --enable-debug-symbols
+ac_add_options --disable-optimize
+ac_add_options --disable-crashreporter
+ac_add_options --disable-install-strip
+ac_add_options --disable-jemalloc
+ac_add_options --disable-elf-hack
+ac_add_options --with-ccache=ccache
+
+mk_add_options AUTOCLOBBER=1
+mk_add_options "export CARGO_INCREMENTAL=1"

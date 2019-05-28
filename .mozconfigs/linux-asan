@@ -45,3 +45,5 @@ ac_add_options --disable-install-strip
 # Settings for a debug+opt build
 #ac_add_options --enable-optimize
 ac_add_options --enable-debug
+
+ac_add_options --enable-valgrind
