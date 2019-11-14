@@ -68,9 +68,6 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-#export JAVA_HOME="$(/usr/libexec/java_home)"
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-
 alias miko="ssh -p 2222 miko@miko.lol"
 alias irc="ssh -t -p 2222 miko@miko.lol tmux a"
 
@@ -103,5 +100,3 @@ source /usr/local/bin/mozconfigwrapper.sh
 
 alias sigma="ssh -p2222 miko@sigma.local"
 alias lldb="PATH=/usr/bin /usr/bin/lldb"
-
-alias moz-phab="~/Code/review/moz-phab"
