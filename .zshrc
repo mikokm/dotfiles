@@ -87,6 +87,7 @@ export MOZ_HOST_BIN="/Users/miko/.mozbuild/host-utils.37.0a2.en-US.mac"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/Users/miko/.mozbuild/android-sdk-macosx/platform-tools:$PATH"
 export PATH="/Users/miko/.mozbuild/arcanist/arcanist/bin:$PATH"
+export PATH="/Users/miko/Library/Python/3.7/bin;$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -100,3 +101,5 @@ source /usr/local/bin/mozconfigwrapper.sh
 
 alias sigma="ssh -p2222 miko@sigma.local"
 alias lldb="PATH=/usr/bin /usr/bin/lldb"
+
+export SCCACHE_CACHE_SIZE="20G"
