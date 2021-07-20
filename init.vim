@@ -41,9 +41,19 @@ endif
 
 set noerrorbells visualbell t_vb=
 
+let mapleader = "\<Space>"
+nnoremap <silent><leader>O :e ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>L :source ~/.config/nvim/init.vim \| :PlugInstall<CR>
 
-nnoremap <silent><C-s> :<C-u>FZF<CR>
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-y': {lines -> setreg('*', join(lines, "\n"))}}
+
+nnoremap <silent><leader>f :<C-u>Files<CR>
+nnoremap <silent><leader>b :<C-u>Buffers<CR>
 
 " Use <c-space> to trigger completion.
 if has('nvim')
