@@ -9,6 +9,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 filetype plugin indent on
@@ -19,16 +20,17 @@ set cmdheight=2
 set cursorline
 set hidden
 set ignorecase
+set smartcase
 set incsearch
 set laststatus=2
 set number
 set shortmess+=Ic
-set smartcase
 set spell
 set spelllang=en
-set t_Co=256
-set updatetime=1000
 set wildmenu
+
+set updatetime=1000
+set ttimeoutlen=5
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -44,7 +46,6 @@ set noerrorbells visualbell t_vb=
 let mapleader = "\<Space>"
 nnoremap <silent><leader>O :e ~/.config/nvim/init.vim<CR>
 nnoremap <silent><leader>L :source ~/.config/nvim/init.vim \| :PlugInstall<CR>
-
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -106,6 +107,10 @@ nmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>ac <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf <Plug>(coc-fix-current)
+
+" Formatting selected code.
+xmap <leader>r  <Plug>(coc-format-selected)
+nmap <leader>r  <Plug>(coc-format-selected)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.

@@ -28,3 +28,7 @@ ac_add_options --enable-debug
 # MacOSX only: Uncomment and adjust this path to match your SDK
 # ac_add_options --with-macos-sdk=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
 
+ac_add_options --enable-valgrind
+
+export LLVM_SYMBOLIZER="/home/miko/.mozbuild/clang/bin/llvm-symbolizer"
+export ASAN_SYMBOLIZER_PATH=$LLVM_SYMBOLIZER
