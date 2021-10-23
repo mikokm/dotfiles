@@ -1,22 +1,9 @@
 # Combined .mozconfig file for ASan on Linux+Mac
 
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-asan
-
-# Adjust this to the number of CPU cores + 2
-mk_add_options MOZ_MAKE_FLAGS=-j8
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/objdir-ff-asan
 
 # Enable ASan specific code and build workarounds
 ac_add_options --enable-address-sanitizer
-
-# Ensure you set this to your LLVM_HOME path
-export LLVM_HOME="/usr/local/opt/llvm@6"
-
-# Set CC/CXX based on LLVM_HOME
-export CC="$LLVM_HOME/bin/clang"
-export CXX="$LLVM_HOME/bin/clang++"
-
-# This will ensure the symbolizer is packaged with the binary
-export LLVM_SYMBOLIZER="$LLVM_HOME/bin/llvm-symbolizer"
 
 # Add ASan to our compiler flags
 export CFLAGS="-fsanitize=address -Dxmalloc=myxmalloc -fPIC"
@@ -40,12 +27,14 @@ ac_add_options --disable-install-strip
 # Settings for an opt build (preferred)
 # The -gline-tables-only ensures that all the necessary debug information for ASan
 # is present, but the rest is stripped so the resulting binaries are smaller.
-# ac_add_options --enable-optimize="-O2 -gline-tables-only"
-# ac_add_options --disable-debug
+#ac_add_options --enable-optimize="-O2 -gline-tables-only"
+#ac_add_options --disable-debug
 
 # Settings for a debug+opt build
-#ac_add_options --enable-optimize
+ac_add_options --enable-optimize
 ac_add_options --enable-debug
 
 # MacOSX only: Uncomment and adjust this path to match your SDK
 ac_add_options --with-macos-sdk=/Library/Developer/SDKs/MacOSX10.13.sdk
+
+ac_add_options --enable-undefined-sanitizer="float-divide-by-zero"

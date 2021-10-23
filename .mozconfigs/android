@@ -6,7 +6,7 @@ ac_add_options --target=x86_64
 
 # With the following Android SDK and NDK:
 ac_add_options --with-android-sdk="/Users/miko/.mozbuild/android-sdk-macosx"
-ac_add_options --with-android-ndk="/Users/miko/.mozbuild/android-ndk-r17b"
+ac_add_options --with-android-ndk="/Users/miko/.mozbuild/android-ndk-r20"
 
 # Write build artifacts to:
 mk_add_options MOZ_OBJDIR=./objdir-droid

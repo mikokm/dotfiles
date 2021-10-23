@@ -100,6 +100,6 @@ source /usr/local/bin/mozconfigwrapper.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias sigma="ssh -p2222 miko@sigma.local"
-alias lldb="PATH=/usr/bin /usr/bin/lldb"
+#alias lldb="PATH=/usr/bin /usr/bin/lldb"
 
-export SCCACHE_CACHE_SIZE="20G"
+ulimit -n 32768
