@@ -81,9 +81,6 @@ alias mb="./mach build binaries"
 alias mr="./mach run"
 alias vim="nvim"
 
-export SCCACHE_CACHE_SIZE="20G"
-export EDITOR="nvim"
-
 HISTSIZE=1048576
 HISTFILE="$HOME/.zsh_history"
 SAVEHIST=$HISTSIZE
@@ -96,3 +93,4 @@ bindkey -v
 source ~/.local/bin/mozconfigwrapper.sh
 source /usr/share/fzf/shell/key-bindings.zsh
 
+eval "$(pyenv init -)"

@@ -1,10 +1,5 @@
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-android
 
-# -s makes builds quieter by default
-# -j4 allows 4 tasks to run in parallel. Set the number to be the amount of
-# cores in your machine. 4 is a good number.
-mk_add_options MOZ_MAKE_FLAGS="-s -j8"
-
 # Enable debug builds
 ac_add_options --enable-debug
 ac_add_options --enable-debug-symbols
@@ -12,7 +7,7 @@ ac_add_options --enable-debug-symbols
 #ac_add_options --enable-optimize
 
 # Enable ccache
-ac_add_options --with-ccache=/usr/bin/ccache
+# ac_add_options --with-ccache=/usr/bin/ccache
 
 # Rebuild the source tree if needed
 mk_add_options AUTOCLOBBER=1
@@ -20,16 +15,12 @@ mk_add_options AUTOCLOBBER=1
 # Build GeckoView/Firefox for Android:
 ac_add_options --enable-application=mobile/android
 
-# Targeting the following architecture.  Ensure exactly one --target is uncommented!
-# For regular phones:
-# ac_add_options --target=arm-linux-androideabi
-# For x86 emulators (and x86 devices, which are uncommon):
-# ac_add_options --target=i686-linux-android
-# For newer phones.
-# ac_add_options --target=aarch64-linux-android
-# For x86_64 emulators (and x86_64 devices, which are even less common):
-ac_add_options --target=x86_64-linux-android
+ac_add_options --target=x86_64
 
 # With the following Android SDK and NDK:
 ac_add_options --with-android-sdk="/home/miko/.mozbuild/android-sdk-linux"
-ac_add_options --with-android-ndk="/home/miko/.mozbuild/android-ndk-r17b"
+ac_add_options --with-android-ndk="/home/miko/.mozbuild/android-ndk-r21d"
+
+#ac_add_options --with-java-bin-path=/usr/lib/jvm/java-1.8.0/bin
+#ac_add_options --with-java-bin-path=/usr/lib/jvm/java-17/bin
+

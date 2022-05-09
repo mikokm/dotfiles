@@ -31,6 +31,7 @@ set shortmess+=Ic
 set spell
 set spelllang=en
 set wildmenu
+set cc=+0
 
 set updatetime=1000
 set ttimeoutlen=5
@@ -61,6 +62,7 @@ nnoremap <silent><leader>b :<C-u>Buffers<CR>
 
 nnoremap <silent><leader>h :CocCommand clangd.switchSourceHeader<CR>
 nnoremap <silent><leader>d :CocDiagnostics<CR>
+nnoremap <silent><leader>l :CocList<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -82,11 +84,6 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -190,7 +187,7 @@ require'nvim-treesitter.configs'.setup {
   ignore_install = { }, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
-    disable = {},  -- list of language that will be disabled
+    disable = { },  -- list of language that will be disabled
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
@@ -199,3 +196,5 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+highlight! link TSError Normal
