@@ -26,24 +26,31 @@ set ignorecase
 set smartcase
 set incsearch
 set laststatus=2
+
+set scrolloff=8
 set number
+set relativenumber
+
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+
 set shortmess+=Ic
 set spell
 set spelllang=en
 set wildmenu
 set cc=+0
 
-set updatetime=1000
+set updatetime=50
 set ttimeoutlen=5
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+set noswapfile
+set nobackup
+set undodir="/.vim/undodir"
+set undofile
+
+set signcolumn=yes
 
 set noerrorbells visualbell t_vb=
 
