@@ -1,0 +1,109 @@
+{
+  "redhat.telemetry.enabled": false,
+  "editor.inlineSuggest.enabled": true,
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
+    },
+    "fish": {
+      "path": "fish",
+      "args": ["-l"]
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.altClickMovesCursor": false,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+    {
+      "before": ["[", "e"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "e"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before" : ["g", "r"],
+      "commands" : ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatSelection"]
+    },
+    {
+      "before": ["<leader>", "F"],
+      "commands": ["editor.action.formatDocument"]
+    },{
+
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.files.revert"]
+
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<leader>", "c"],
+      "commands": ["editor.action.commentLine"],
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatSelection"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "workbench.startupEditor": "none",
+  "editor.formatOnSaveMode": "modifications",
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "vim.smartRelativeLine": true,
+  "editor.lineNumbers": "relative",
+  "workbench.colorTheme": "Solarized Dark",
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  },
+}
