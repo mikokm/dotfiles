@@ -78,7 +78,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 source ~/Code/powerlevel10k/powerlevel10k.zsh-theme
@@ -97,8 +97,6 @@ setopt extendedhistory
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(nodenv init -)"
-
 bindkey -v
 bindkey "\e[1;3D" backward-word
 bindkey "\e[1;3C" forward-word
@@ -106,3 +104,11 @@ bindkey "\e[1;3C" forward-word
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export PATH="$PATH:/Users/miko/Code/depot_tools"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
